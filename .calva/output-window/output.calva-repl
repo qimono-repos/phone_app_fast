@@ -1,0 +1,164 @@
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+; Starting Jack-in Terminal: pushd c:\Users\qimon\source\repos\phone_app_fast & java -jar ".calva\deps.clj.jar" -Sdeps "{:deps {nrepl/nrepl {:mvn/version,""1.0.0""},cider/cider-nrepl {:mvn/version,""0.28.5""}}}" -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]" & popd
+; Jacking in...
+; Connecting using "Babashka" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+; Starting Jack-in Terminal: pushd c:\Users\qimon\source\repos\phone_app_fast & bb --nrepl-server 57059 & popd
+; Jacking in...
+; Connecting using "Babashka" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+; Starting Jack-in Terminal: pushd c:\Users\qimon\source\repos\phone_app_fast & bb --nrepl-server 58364 & popd
+; Using host:port 127.0.0.1:58364 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+nil
+clj꞉user꞉>  ; Use `alt+enter` to evaluate
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+"Welcome to the Getting Started REPL! 💜"
+"Welcome to the Getting Started REPL! 💜"
+clj꞉get-started.hello-repl꞉> 
+"Welcome to the Getting Started REPL! 💜"
+"Welcome to the Getting Started REPL! 💜"
+clj꞉get-started.hello-repl꞉> 
+(ns get-started.hello-repl)
+nil
+clj꞉get-started.hello-repl꞉> 
+"Hello World!"
+"Hello World!"
+clj꞉get-started.hello-repl꞉> 
+(repeat 7
+          "I am using the REPL! 💪")
+("I am using the REPL! 💪"
+ "I am using the REPL! 💪"
+ "I am using the REPL! 💪"
+ "I am using the REPL! 💪"
+ "I am using the REPL! 💪"
+ "I am using the REPL! 💪"
+ "I am using the REPL! 💪")
+clj꞉get-started.hello-repl꞉> 
+(map (fn [s]
+         (if (< (count s) 5)
+           (str "Give me " s "! ~•~ " (last s) "!")
+           s))
+       ["an R" "an E" "a  P" "an L" "What do you get?" "REPL!"])
+("Give me an R! ~•~ R!" "Give me an E! ~•~ E!" "Give me a  P! ~•~ P!" "Give me an L! ~•~ L!" "What do you get?" "REPL!")
+clj꞉get-started.hello-repl꞉> 
+(defn greet
+  "I'll greet you"
+  [s]
+  (str "Hello " s "!"))
+#'get-started.hello-repl/greet
+clj꞉get-started.hello-repl꞉> 
+(defn greet
+  "I'll greet you"
+  [s]
+  (str "Hello " s "!"))
+#'get-started.hello-repl/greet
+clj꞉get-started.hello-repl꞉> 
+(greet "World")
+"Hello World!"
+clj꞉get-started.hello-repl꞉> 
+(greet "World")
+"Hello World!"
+clj꞉get-started.hello-repl꞉> 
+(println (greet "World"))
+Hello World!
+nil
+clj꞉get-started.hello-repl꞉> 
+; Evaluating file: hello_repl.clj
+"hello_repl.clj is loaded, and ready with some things for you to try."
+clj꞉get-started.hello-repl꞉> 
+(str 23 (apply + [2 3]) (:foo {:foo "foo"}))
+"235foo"
+clj꞉get-started.hello-repl꞉> 
+(println (greet "World"))
+Hello World!
+nil
+clj꞉get-started.hello-repl꞉> 
+(def foo
+    [1 2 "three four"])
+#'get-started.hello-repl/foo
+clj꞉get-started.hello-repl꞉> 
+(str 23 (apply + [2 3]) (:foo {:foo "foo"}))
+"235foo"
+clj꞉get-started.hello-repl꞉> 
+(def three 3)
+#'get-started.hello-repl/three
+clj꞉get-started.hello-repl꞉> 
+(def four "four")
+#'get-started.hello-repl/four
+clj꞉get-started.hello-repl꞉> 
+(def foo
+    [1 2 "three four"])
+#'get-started.hello-repl/foo
+clj꞉get-started.hello-repl꞉> 
+"I ♥️ Clojure"
+"I ♥️ Clojure"
+clj꞉get-started.hello-repl꞉> 
+(greet "World")
+"Hello World!"
+clj꞉get-started.hello-repl꞉> 
+foo
+[1 2 "three four"]
+clj꞉get-started.hello-repl꞉> 
+(range 10)
+(0 1 2 3 4 5 6 7 8 9)
+clj꞉get-started.hello-repl꞉> 
+(println (greet "side effect"))
+Hello side effect!
+nil
+clj꞉get-started.hello-repl꞉> 
+(+ (* 2 2)
+     2)
+6
+clj꞉get-started.hello-repl꞉> 
+(Math/abs -1)
+1
+clj꞉get-started.hello-repl꞉> 
+(Math/log 2 1)
+; java.lang.IllegalArgumentException: No matching method log found taking 2 args user c:\Users\qimon\AppData\Local\Temp\betterthantomorrow.calva\pi1vjw\src\get_started\hello_repl.clj:1:1
+clj꞉get-started.hello-repl꞉> 
+(Math/ln 1)
+; java.lang.IllegalArgumentException: No matching method ln found taking 1 args user c:\Users\qimon\AppData\Local\Temp\betterthantomorrow.calva\pi1vjw\src\get_started\hello_repl.clj:1:1
+clj꞉get-started.hello-repl꞉> 
+(Math/ln 8)
+; java.lang.IllegalArgumentException: No matching method ln found taking 1 args user c:\Users\qimon\AppData\Local\Temp\betterthantomorrow.calva\pi1vjw\src\get_started\hello_repl.clj:1:1
+clj꞉get-started.hello-repl꞉> 
+(Math/exp 9 2)
+; java.lang.IllegalArgumentException: No matching method exp found taking 2 args user c:\Users\qimon\AppData\Local\Temp\betterthantomorrow.calva\pi1vjw\src\get_started\hello_repl.clj:1:1
+clj꞉get-started.hello-repl꞉> 
+(Math/abs -1)
+1
+clj꞉get-started.hello-repl꞉> 
+(defn- divisible
+           "Is `n` divisible by `d`?"
+[n d]
+(zero? (mod n d)
+           )
+
+  )
+#'get-started.hello-repl/divisible
+clj꞉get-started.hello-repl꞉> 
+; Evaluating file: main.cljd
+; java.io.FileNotFoundException: Could not locate package:flutter/material/dart.bb, package:flutter/material/dart.clj or package:flutter/material/dart.cljc on classpath. user /c:/Users/qimon/source/repos/phone_app_fast/src/acme/main.cljd:2:3
+; Evaluation of file main.cljd failed: class java.io.FileNotFoundException
+clj꞉acme.main꞉> 
