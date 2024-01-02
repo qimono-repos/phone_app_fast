@@ -162,3 +162,145 @@ clj꞉get-started.hello-repl꞉> 
 ; java.io.FileNotFoundException: Could not locate package:flutter/material/dart.bb, package:flutter/material/dart.clj or package:flutter/material/dart.cljc on classpath. user /c:/Users/qimon/source/repos/phone_app_fast/src/acme/main.cljd:2:3
 ; Evaluation of file main.cljd failed: class java.io.FileNotFoundException
 clj꞉acme.main꞉> 
+(str "Welcome"
+       " to "
+       "Clojure!"
+       " "
+       "♥️")
+"Welcome to Clojure! ♥️"
+clj꞉get-started.welcome-to-clojure꞉> 
+(defn last-eval-wins []
+    (println 'side-effect-1)
+    1
+    (println 'side-effect-2)
+    2)
+#'get-started.welcome-to-clojure/last-eval-wins
+clj꞉get-started.welcome-to-clojure꞉> 
+(last-eval-wins)
+side-effect-1
+side-effect-2
+2
+clj꞉get-started.welcome-to-clojure꞉> 
+(println 'prints-this-evaluates-to-nil)
+prints-this-evaluates-to-nil
+nil
+clj꞉get-started.welcome-to-clojure꞉> 
+(def foo "foo")
+#'get-started.welcome-to-clojure/foo
+clj꞉get-started.welcome-to-clojure꞉> 
+(for [x '(1 2 3)  ; Calls the macro `for`
+        y '(:a :b)] ; (List comprehension)
+    [x y])
+([1 :a] [1 :b] [2 :a] [2 :b] [3 :a] [3 :b])
+clj꞉get-started.welcome-to-clojure꞉> 
+(str 1 2 3)
+"123"
+clj꞉get-started.welcome-to-clojure꞉> 
+(map str [:foo :bar])
+(":foo" ":bar")
+clj꞉get-started.welcome-to-clojure꞉> 
+(map for [:foo :bar])
+; java.lang.IllegalStateException: Can't take value of a macro: #'clojure.core/for user c:\Users\qimon\AppData\Local\Temp\betterthantomorrow.calva\pi1vjw\src\get_started\welcome_to_clojure.clj:1:1
+clj꞉get-started.welcome-to-clojure꞉> 
+(map def [:foo :bar])
+; clojure.lang.ExceptionInfo: Could not resolve symbol: def user c:\Users\qimon\AppData\Local\Temp\betterthantomorrow.calva\pi1vjw\src\get_started\welcome_to_clojure.clj:1:1
+clj꞉get-started.welcome-to-clojure꞉> 
+18
+18
+clj꞉get-started.welcome-to-clojure꞉> 
+-1.8
+-1.8
+clj꞉get-started.welcome-to-clojure꞉> 
+(->> ["I" "💖" "Paredit"]
+     (interpose " ~ ")
+     (apply str))
+"I ~ 💖 ~ Paredit"
+clj꞉get-started.hello-paredit꞉> 
+(ns get-started.hello-paredit)
+nil
+clj꞉get-started.hello-paredit꞉> 
+(->> ["I" "💖" "Paredit"]
+     (interpose " ~ ")
+     (apply str))
+"I ~ 💖 ~ Paredit"
+clj꞉get-started.hello-paredit꞉> 
+(->> ["I" "💖" "Paredit"]
+     (interpose " ~ ")
+     (apply str))
+"I ~ 💖 ~ Paredit"
+clj꞉get-started.hello-paredit꞉> 
+(defn strict-greet
+  "Try to remove brackets and string quotes
+   using Backspace or Delete. Try the same
+   with the Alt key pressed."
+  [name]
+  (str "Strictly yours, " name "!"))
+#'get-started.hello-paredit/strict-greet
+clj꞉get-started.hello-paredit꞉> 
+(defn strict-greet
+  "Try to remove brackets and string quotes
+   using Backspace or Delete. Try the same
+   with the Alt key pressed."
+  [name]
+  (str "Strictly yours, " name "!"))
+#'get-started.hello-paredit/strict-greet
+clj꞉get-started.hello-paredit꞉> 
+; Evaluating file: hello_paredit.clj
+"Hello Calva Paredit λ 💖 🚀"
+clj꞉get-started.hello-paredit꞉> 
+(def raise-me 44)
+#'get-started.hello-paredit/raise-me
+clj꞉get-started.hello-paredit꞉> 
+(str "aaa" 3 raise-me)
+"aaa344"
+clj꞉get-started.hello-paredit꞉> 
+(def raise-me "5")
+#'get-started.hello-paredit/raise-me
+clj꞉get-started.hello-paredit꞉> 
+(def raise-me (str 
+                 (str 4 4)
+                 
+                 
+                 
+                 (str "aaa" 3 raise-me)))
+#'get-started.hello-paredit/raise-me
+clj꞉get-started.hello-paredit꞉> 
+raise-me
+"44aaa35"
+clj꞉get-started.hello-paredit꞉> 
+(def raise-me (str 
+                 (str 4 4)
+                 
+                 
+                 
+                 (str "aaa" 3 raise-me)))
+#'get-started.hello-paredit/raise-me
+clj꞉get-started.hello-paredit꞉> 
+raise-me
+"44aaa344aaa35"
+clj꞉get-started.hello-paredit꞉> 
+(def raise-me (str 
+                 (str 4 4)
+                 
+                 
+                 
+                 (str "aaa" 3 )))
+#'get-started.hello-paredit/raise-me
+clj꞉get-started.hello-paredit꞉> 
+raise-me
+"44aaa3"
+clj꞉get-started.hello-paredit꞉> 
+; Evaluating file: hello_paredit.clj
+; clojure.lang.ExceptionInfo: Could not resolve symbol: four user /c:/Users/qimon/AppData/Local/Temp/betterthantomorrow.calva/pi1vjw/src/get_started/hello_paredit.clj:83:1
+; Evaluation of file hello_paredit.clj failed: class clojure.lang.ExceptionInfo
+clj꞉get-started.hello-paredit꞉> 
+; Evaluating file: hello_paredit.clj
+; clojure.lang.ExceptionInfo: Could not resolve symbol: four user /c:/Users/qimon/AppData/Local/Temp/betterthantomorrow.calva/pi1vjw/src/get_started/hello_paredit.clj:83:1
+; Evaluation of file hello_paredit.clj failed: class clojure.lang.ExceptionInfo
+clj꞉get-started.hello-paredit꞉> 
+(def raise-me  (str "aaa" 3))
+#'get-started.hello-paredit/raise-me
+clj꞉get-started.hello-paredit꞉> 
+"Hello Calva Paredit λ 💖 🚀"
+"Hello Calva Paredit λ 💖 🚀"
+clj꞉get-started.hello-paredit꞉> 
