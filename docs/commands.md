@@ -96,3 +96,14 @@ This is the most usual location of the sdkmanager when it is installed via Andro
 
 C:\Users\%USERNAME%\AppData\Local\Android\Sdk
 
+# GIT
+
+## Basic setup
+
+ git config --global user.email jd@gmail.com
+
+ git config --global user.name JohnDoe
+
+ - set the default branch of new repositories to "trunk"
+
+ git config --global init.defaultBranch trunk
