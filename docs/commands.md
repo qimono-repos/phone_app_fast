@@ -102,28 +102,21 @@ C:\Users\%USERNAME%\AppData\Local\Android\Sdk
 
 ## Windows Security : exclude quemu from threats
 
-The Windows Security Protection History page shows a timeline of events, with the most recent events at the top¹. If you see two entries for the same file (`qemu-system-x86_64.exe`), they represent two different actions taken by Windows Security¹.
+It seems like Windows Security has blocked the qemu-system-x86_64.exe file, which is a part of the Android SDK emulator. If you trust this file and want to allow it, you can follow these steps12:
 
-The "Quarantined" state means that Windows Security has blocked the file and moved it to a safe location where it can't harm your computer¹. The "Restored" state means that you've chosen to restore the file, and Windows Security has moved it back to its original location¹.
+1. Open Windows Security: You can do this by searching for “windows security” in the Taskbar search box and clicking on the result1.
 
-If the "Restored" state appears after the "Quarantined" state in the timeline (i.e., it's closer to the top of the page), it means that the file was restored after being quarantined¹. However, if you don't see an action button for the "Quarantined" state, it might be because the file has already been restored¹.
+2. Go to the Virus & threat protection tab: Once you’ve opened Windows Security, navigate to this tab1.
 
-If you're confident that `qemu-system-x86_64.exe` is safe and you want to prevent Windows Security from blocking it in the future, you can add it to the exclusions list⁴. Here's how:
+3. Click on the Protection history option: This will open a window where you can find all the blocked apps1.
 
-1. Open Windows Security and go to Virus & threat protection.
-2. Under Virus & threat protection settings, select Manage settings.
-3. Under Exclusions, select Add or remove exclusions.
-4. Select Add an exclusion, and then select from files, folders, file types, or process⁴.
+4. Choose the file you want to allow: In your case, this would be qemu-system-x86_64.exe1.
 
-Please note that you should only add an exclusion if you're confident that the file or folder is safe⁴. If you're unsure, it's better to leave the file quarantined to protect your system¹.
+5. Click the Actions button and choose the Allow on device option: After opening the app details, you’ll see these options1.
 
+Confirm your choice: You’ll see a User Account Control (UAC) popup window where you have to click the Yes button1.
 
-Source: Conversation with Bing, 1/4/2024
-(1) Protection History - Microsoft Support. https://support.microsoft.com/en-us/windows/protection-history-f1e5fd95-09b4-46d1-b8c7-1059a1e09708.
-(2) Add an exclusion to Windows Security - Microsoft Support. https://support.microsoft.com/en-us/windows/add-an-exclusion-to-windows-security-811816c0-4dfd-af4a-47e4-c301afe13b26.
-(3) WINDOWS DEFENDER IS NOT REMOVING THREATS - Microsoft Community. https://answers.microsoft.com/en-us/windows/forum/all/windows-defender-is-not-removing-threats/edeee6ed-6117-468d-a25b-8f95a7749112.
-(4) How to allow blocked file or app on Microsoft Defender Antivirus. https://pureinfotech.com/allow-blocked-file-app-microsoft-defender-antivirus/.
-(5) How to Manage Windows Defender Antivirus Found Threats. https://www.majorgeeks.com/content/page/how_to_manage_windows_defender_antivirus_found_threats.html.
+After following these steps, the qemu-system-x86_64.exe file should no longer be blocked by Windows Security1.
 
 ## Recomendation: exclude emulator folder
 
