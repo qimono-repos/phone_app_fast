@@ -113,3 +113,7 @@ C:\Users\%USERNAME%\AppData\Local\Android\Sdk
 - Disable windows desktop , for mobile development
 
 flutter config --no-enable-windows-desktop
+
+- Add flutter executable to path in windows
+
+[Environment]::SetEnvironmentVariable("Path", $Env:Path + ";C:\Users\alber\flutter\bin", "User")
