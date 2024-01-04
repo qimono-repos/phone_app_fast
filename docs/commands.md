@@ -107,3 +107,9 @@ C:\Users\%USERNAME%\AppData\Local\Android\Sdk
  - set the default branch of new repositories to "trunk"
 
  git config --global init.defaultBranch trunk
+
+# Flutter
+
+- Disable windows desktop , for mobile development
+
+flutter config --no-enable-windows-desktop
