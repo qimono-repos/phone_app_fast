@@ -90,3 +90,9 @@ clj
 
     scoop install babashka
 ```
+# Windows: Location of sdkmanager
+
+This is the most usual location of the sdkmanager when it is installed via Android Studio
+
+C:\Users\%USERNAME%\AppData\Local\Android\Sdk
+
