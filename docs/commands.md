@@ -118,6 +118,13 @@ Confirm your choice: You’ll see a User Account Control (UAC) popup window wher
 
 After following these steps, the qemu-system-x86_64.exe file should no longer be blocked by Windows Security1.
 
+### Eclude Android folders
+
+1. Open Windows Security and go to Virus & threat protection.
+2. Under Virus & threat protection settings, select Manage settings.
+3. Under Exclusions, select Add or remove exclusions.
+4. Select Add an exclusion, and then select from files, folders, file types, or process.
+
 ## Recomendation: exclude emulator folder
 
 folder: C:\Users\alber\AppData\Local\Android\Sdk\emulator\qemu\
