@@ -151,3 +151,6 @@ flutter config --no-enable-windows-desktop
 - Add flutter executable to path in windows
 
 [Environment]::SetEnvironmentVariable("Path", $Env:Path + ";C:\Users\alber\flutter\bin", "User")
+
+# Java version compatible with current gradle in Windows
+winget install EclipseAdoptium.Temurin.11.JDK
